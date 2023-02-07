@@ -1,4 +1,24 @@
 {
+  "name": "character-generator",
+  "version": "1.0.0",
+  "description": "API project using the MVC layout",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samocain93/character-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samocain93/character-generator/issues"
+  },
+  "homepage": "https://github.com/samocain93/character-generator#readme"
+  
   "dependencies": {
     "tailwindcss": "^3.2.4"
   }
