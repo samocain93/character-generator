@@ -9,9 +9,13 @@ Character.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        class: {
-            type: DataTypes.STRING,
-            allowNull: false
+        class_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'class',
+                key: 'id'
+            }
         },
         age: {
             type: DataTypes.DECIMAL,
