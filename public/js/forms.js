@@ -16,9 +16,14 @@ const bckgrndColor = document.getElementById("char-background-color")
 
 function generateForm() {
    const createName = {
-      statementQuest: 'Enter Desired Character name'   
+      nameQuest: 'Enter Desired Character name'   
    }
-   document.getElementById 
+   
+   const createHeight = {
+      heightQuest: "Choose your character`'`s height in feet"
+   }
+   
+   charName.innerText
 }
 
 
@@ -28,3 +33,4 @@ function createCharacter(){
 function generateCharacterSheet(){
 
 }
+
