@@ -5,18 +5,19 @@ class Character extends Model {}
 
 Character.init(
     {
+
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true, 
+            autoIncrement: true,
+        },
+
         name: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        class_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'class',
-                key: 'id'
-            }
-        },
+     
         age: {
             type: DataTypes.DECIMAL,
             allowNull: false
@@ -27,6 +28,23 @@ Character.init(
         },
         background_color: {
             type: DataTypes.STRING
+        },
+
+        class_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'class',
+                key: 'id'
+            }
+        },
+
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
         }
     },
     {
