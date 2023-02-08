@@ -6,18 +6,17 @@ class Class extends Model {}
 Class.init(
     {
         id: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
         },
 
         class_name: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        class_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            autoIncrement: true
-        },
+       
         strength: {
             type: DataTypes.INTEGER,
             allowNull: false
@@ -37,6 +36,14 @@ Class.init(
         agility: {
             type: DataTypes.INTEGER,
             allowNull: false
+        },
+
+        character_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'character',
+                key: 'id',
+            }
         }
 
     },
