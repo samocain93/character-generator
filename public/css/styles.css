@@ -1,0 +1,32 @@
+body {
+    background-color: rgb(255, 255, 196);
+}
+
+nav {
+    background-color: rgb(37, 106, 255);
+    padding: 10px 0px 10px 0px;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; */
+}
+
+header {
+    text-align: center;
+    font-size: 50px;
+}
+
+li {
+    color: white;
+    font-size: 20px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+li:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
