@@ -4,13 +4,14 @@ const router = require('express').Router();
 const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
+// Rendering homepage
 router.get('/', (req, res) => {
-   res.render('nav');
-});
+    res.render('homepage');
+  });
 
-
-router.get('/', async (req, res) => {
-   // res.render();
+  // Rendering login page
+router.get('/login', async (req, res) => {
+   res.render('login');
 });
 
 router.get('/create', async (req, res) => {

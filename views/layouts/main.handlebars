@@ -6,19 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />  
     <title>My Awesome App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    {{!-- <link rel="stylesheet" type="text/css" href="./css/styles.css"/> --}}
+    <link rel="stylesheet" type="text/css" href="./css/styles.css"/>
     <link rel="stylesheet" href="./css/output.css"/>
   </head>
 
-  <body class="bg-blue-400">
+  <body class="bg-blue-600">
 
-    <nav class="bg-green-500">
-      <ul  id="nav-list">
-          <li class="text-lg" id="home"><a href="/"></a>Home</li>
-          <li id="create-character"><a href="/create"></a>Create</li>
-          <li id="view-character"><a href="/characters"></a>View Characters</li>
-      </ul>
-    </nav>
+    <div class="bg-green-600" id="">
+      <header class="" id="">
+        <h1>
+          <span role="img" aria-label="alien-gamer">👾</span> 
+          <a href="/">Character Generator</a>
+        </h1>
+
+        {{!-- <nav class="">
+          <ul  id="nav-list">
+            <li class="text-lg" id="home"><a href="/"></a>Home</li>
+            <li id="create-character"><a href="/create"></a>Create</li>
+            <li id="view-character"><a href="/characters"></a>View Characters</li>
+          </ul>
+        </nav> --}}
+
+        <nav>
+          {{#if logged_in}}
+          <a href="/profile">profile</a> |
+          <a href=""></a>
+          <button class="no-button" id="logout">logout</button>
+          {{else}}
+          {{!-- <a href="/login">login</a> --}}
+          {{/if}}
+        </nav>
+
+      </header>
+    </div>
 
     <main>
           {{{body}}}

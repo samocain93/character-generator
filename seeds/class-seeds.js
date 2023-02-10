@@ -1,47 +1,47 @@
-const sequelize = require("../config/connection");
-const { Class } = require("../models");
+const { Class } = require('../models');
 
 const classData = [
-   {
-      id: 1,
-      class_name: "Rogue",
-      strength: 1,
-      endurance: 2,
-      charisma: 3,
-      intelligence: 4,
-      agility: 5,
-   },
-   {
-      id: 2,
-      class_name: "Fighter",
-      strength: 5,
-      endurance: 4,
-      charisma: 3,
-      intelligence: 2,
-      agility: 1
-   },
-   {
-      id: 3,
-      class_name: "Mage",
-      strength: 1,
-      endurance: 3,
-      charisma: 5,
-      intelligence: 5,
-      agility: 2
-
-   },
-   {
-      id: 4,
-      class_name: "Bard",
-      strength: 2,
-      endurance: 4,
-      charisma: 4,
-      intelligence: 3,
-      agility: 1
-   }
-];
-
-
+  {
+    class_name: 'Warrior',
+    strength: 60,
+    endurance: 80,
+    charisma: 40,
+    intelligence: 20,
+    agility: 10,
+  },
+  {
+    class_name: 'Mage',
+    strength: 20,
+    endurance: 40,
+    charisma: 10,
+    intelligence: 90,
+    agility: 30,
+  },
+  {
+    class_name: 'Assassin',
+    strength: 60,
+    endurance: 30,
+    charisma: 10,
+    intelligence: 40,
+    agility: 90,
+  },
+  {
+    class_name: 'Guardian',
+    strength: 50,
+    endurance: 90,
+    charisma: 60,
+    intelligence: 20,
+    agility: 10,
+  },
+  {
+    class_name: 'Strategist',
+    strength: 30,
+    endurance: 10,
+    charisma: 60,
+    intelligence: 90,
+    agility: 30,
+  }
+]
 const seedClasses = () => Class.bulkCreate(classData);
 
 module.exports = seedClasses;

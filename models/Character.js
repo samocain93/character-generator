@@ -19,15 +19,16 @@ Character.init(
         },
      
         age: {
-            type: DataTypes.DECIMAL,
-            allowNull: false
-        },
-        height: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
+        height: {
+            type: DataTypes.DECIMAL,
+            allowNull: false
+        },
         background_color: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: false
         },
 
         class_id: {
