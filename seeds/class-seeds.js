@@ -42,6 +42,6 @@ const classData = [
     agility: 30,
   }
 ]
-const seedClasses = () => Class.bulkCreate(productData);
+const seedClasses = () => Class.bulkCreate(classData);
 
 module.exports = seedClasses;
