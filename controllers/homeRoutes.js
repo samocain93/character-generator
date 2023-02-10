@@ -9,8 +9,9 @@ router.get('/', (req, res) => {
     res.render('homepage');
   });
 
-router.get('/', async (req, res) => {
-   // res.render();
+  // Rendering login page
+router.get('/login', async (req, res) => {
+   res.render('login');
 });
 
 router.get('/character', async (req, res) => {
