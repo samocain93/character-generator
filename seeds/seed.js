@@ -1,34 +1,14 @@
+const seedClasses = require('./class-seeds');
+const seedCharacters = require('./character-seeds');
+const seedUsers = require('./user-seeds');
+
 const sequelize = require('../config/connection');
-const { Character, Class, User } = require('../models');
 
-const userData = require('./user-seeds');
-const characterData = require('./character-seeds');
-const classData = require('./class-seeds');
-
-const seedDatabase = async () => {
+const seedAll = async() => {
     await sequelize.sync({ force: true });
+    await seedClasses();
+    await seedCharacters();
+    await seedUsers();
+};
 
-    const users = await User.bulkCreate(userData, {
-        individualHooks: true,
-        returning: true,
-    });
-
-    for (const character of characterData) {
-        await Character.create({
-            user_id: users[Math.floor(Math.random() * users.length)].id,
-        });
-           
-    }
-
-
-
-
-
-
-
-
-
-    process.exit(0);
-}
-
-seedDatabase();
+seedAll();
