@@ -4,11 +4,10 @@ const router = require('express').Router();
 const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
+// Rendering homepage
 router.get('/', (req, res) => {
-    res.render('nav');
+    res.render('homepage');
   });
-
-  module.exports = router;
 
 router.get('/', async (req, res) => {
    // res.render();
@@ -23,4 +22,3 @@ router.post('/', async (req, res) => {
 });
 
 module.exports = router;
-
