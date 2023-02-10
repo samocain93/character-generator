@@ -19,11 +19,11 @@ Character.init(
         },
      
         age: {
-            type: DataTypes.DECIMAL,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         height: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.DECIMAL,
             allowNull: false
         },
         background_color: {
