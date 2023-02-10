@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />  
-    <title>Character Generator</title>
+    <title>My Awesome App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <link rel="stylesheet" type="text/css" href="./style.css" />
+    {{!-- <link rel="stylesheet" type="text/css" href="./css/styles.css"/> --}}
+    <link rel="stylesheet" href="./css/output.css"/>
   </head>
-  
-   <nav>
-         <ul id="nav-list">
-            <li id="home">Home</li>
-            <li id="create-character">Create</li>
-            <li id="view-character">View Characters</li>
-         </ul>
-   </nav>
-  
-  <body>
-     
-    {{{body}}}
+
+  <body class="bg-blue-400">
+
+    <nav class="bg-green-500">
+      <ul  id="nav-list">
+          <li class="text-lg" id="home"><a href="/"></a>Home</li>
+          <li id="create-character"><a href="/create"></a>Create</li>
+          <li id="view-character"><a href="/characters"></a>View Characters</li>
+      </ul>
+    </nav>
+
+    <main>
+          {{{body}}}
+    </main>
+
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+
   </body>
 </html>
