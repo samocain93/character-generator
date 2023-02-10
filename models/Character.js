@@ -32,7 +32,7 @@ Character.init(
 
         class_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            // allowNull: false,
             references: {
                 model: 'class',
                 key: 'id'
