@@ -14,13 +14,13 @@ const seedDatabase = async () => {
     });
 
     for (const character of characterData) {
-        await PromiseRejectionEvent.create({ 
-            ...PromiseRejectionEvent,
+        await Character.create({
             user_id: users[Math.floor(Math.random() * users.length)].id,
         });
+           
     }
 
-    
+
 
 
 
