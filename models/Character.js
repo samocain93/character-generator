@@ -27,7 +27,8 @@ Character.init(
             allowNull: false
         },
         background_color: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: false
         },
 
         class_id: {
