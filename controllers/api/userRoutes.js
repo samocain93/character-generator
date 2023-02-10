@@ -1,5 +1,7 @@
+
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Character, Class } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 //create new user
 router.post('/', async (req, res) => {
@@ -57,5 +59,17 @@ router.post('/logout', (req, res) => {
     }
 });
 
+// get all users
+router.get("/", async (req, res) => {
+  try {
+    const userData = await User.findAll({
+      attributes: { exclude: ["password"] },
+    });
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
+
