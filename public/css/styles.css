@@ -60,6 +60,8 @@ li:hover {
 .btn {
     border-radius: 5px;
     background-color: rgb(255, 255, 255);
+    border: 2px solid;
+    font-size: 70%;
     /* padding: 10px; */
     margin: 10px;
     width: 30%;
@@ -67,10 +69,11 @@ li:hover {
 }
 
 .btn:hover {
-    opacity: 0.7;
+    background-color: antiquewhite;
     cursor: pointer;
+    transform: translateY(3px);
 }
-
+/* 
 .btn:active {
-    transform: translateY(8px);
-}
+    transform: translateY(2px);
+} */
