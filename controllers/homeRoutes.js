@@ -14,12 +14,12 @@ router.get('/login', async (req, res) => {
    res.render('login');
 });
 
-router.get('/character', async (req, res) => {
-  res.render('partials/character-form');
+router.get('/create', async (req, res) => {
+   res.render('partials/character-form');
 });
 
 router.post('/', async (req, res) => {
-  res.render('partials/form', {'body': req.body});
+   res.render('partials/form', { 'body': req.body });
 });
 
 module.exports = router;

@@ -38,14 +38,6 @@ Class.init(
             allowNull: false
         },
 
-        character_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'character',
-                key: 'id',
-            }
-        }
-
     },
     {
         sequelize,

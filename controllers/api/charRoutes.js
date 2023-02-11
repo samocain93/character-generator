@@ -1,14 +1,16 @@
 const router = require('express').Router();
-const { Character } = require('../../models/Character.js');
+const { Character } = require('../../models');
 
-router.post('/character/create', async (req, res) => {
-   // creates new blank character and assigns the values 
-   let newb = new Character();
-   newb.id = 1;
-   newb.name = "Fred";
-   newb.height = 5;
-   newb.background_color = red
+router.get('/', async (req, res) => {
+});
 
+router.post('/create', async (req, res) => {
+   // console.log(req.body);
+   // creates new character with the request body
+   const newChar = Character.create(
+      req.body
+   );
+   res.send(newChar);
 });
 
 module.exports = router;
