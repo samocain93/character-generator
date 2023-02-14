@@ -30,8 +30,11 @@
     </div class="">
           <nav class="text-center text-2xl">
           {{#if logged_in}}
-          <a href="/profile">profile</a> |
-          <a href="">log out</a>
+          <a href="/">Home</a> |
+          <a href="/create">Create</a> |
+          <a href="/view">Your Last Character</a> |
+          <a href="/profile">Profile</a> |
+          <a href="">Log out</a>
           <button class="no-button" id="logout">logout</button>
           {{else}}
           <a class="log-in-btn bg-red-400 border-indigo-400" href="/login">login</a>

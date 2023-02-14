@@ -1,6 +1,6 @@
 //
 const router = require("express").Router();
-const { User } = require("../models");
+const { User, Character, Class } = require("../models");
 const withAuth = require("../utils/auth");
 
 // Rendering homepage
@@ -29,6 +29,23 @@ router.get("/create", async (req, res) => {
 
 router.post("/", async (req, res) => {
   res.render("partials/form", { body: req.body });
+});
+// renders most recent character sheet view in body
+router.get('/view', async (req, res) => {
+   const newCharData = await Character.findOne({
+      where: { 'user_id': req.session.user_id },
+      order: [ [ 'id', 'DESC' ]]
+   })
+   const newChar = newCharData.get({ plain: true });
+
+   const charClassData = await Class.findByPk(newChar.class_id);
+   const charClass = charClassData.get({ plain: true });
+   const className = charClass.class_name;
+
+   const userData = await User.findByPk(newChar.user_id);
+   const user = userData.get({ plain: true });
+   const username = user.username;
+   res.render("partials/character-sheet", {...newChar, className: className, username: username});
 });
 
 router.get("/profile", withAuth, async (req, res) => {
