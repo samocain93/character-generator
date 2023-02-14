@@ -16,30 +16,25 @@
       <header class="" id="">
         <h1>
           <span role="img" aria-label="alien-gamer">👾</span> 
-          <a class="hover:text-slate-600 text-decoration:underline" href="/">Character Generator</a>
+          <a class="text-6xl hover:text-slate-600 text-decoration:underline" href="/">Character Generator</a>
         </h1>
-        {{!-- <nav class="">
-          <ul  id="nav-list">
-            <li class="text-lg" id="home"><a href="/"></a>Home</li>
-            <li id="create-character"><a href="/create"></a>Create</li>
-            <li id="view-character"><a href="/characters"></a>View Characters</li>
-          </ul>
-        </nav> --}}
-      </header>
-
-    </div class="">
-          <nav class="text-center text-2xl">
+            <nav class="text-center text-base">
           {{#if logged_in}}
           <a href="/">Home</a> |
           <a href="/create">Create</a> |
           <a href="/view">Your Last Character</a> |
-          <a href="/profile">Profile</a> |
-          <a href="">Log out</a>
-          <button class="no-button" id="logout">logout</button>
+          <a class="hover:text-slate-600" href="/profile">Profile</a> |
+          <a class="hover:text-slate-600" id="logout" href="">Log Out</a>
+          {{!-- <button class="no-button" id="logout">logout</button> --}}
           {{else}}
           <a class="log-in-btn bg-red-400 border-indigo-400" href="/login">login</a>
           {{/if}}
         </nav>
+      </header>
+      
+
+    </div class="">
+   
     <div>
 
       {{!-- <div class="grid grid-rows-4 grid-flow-col gap-4">
@@ -51,7 +46,7 @@
     </div>
 
     <main>
-          {{{body}}}
+          {{{ body }}}
     </main>
 
     {{#if logged_in}}
