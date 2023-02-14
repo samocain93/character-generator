@@ -16,9 +16,8 @@
       <header class="" id="">
         <h1>
           <span role="img" aria-label="alien-gamer">👾</span> 
-          <a href="/">Character Generator</a>
+          <a class="hover:text-slate-600 text-decoration:underline" href="/">Character Generator</a>
         </h1>
-
         {{!-- <nav class="">
           <ul  id="nav-list">
             <li class="text-lg" id="home"><a href="/"></a>Home</li>
@@ -26,18 +25,26 @@
             <li id="view-character"><a href="/characters"></a>View Characters</li>
           </ul>
         </nav> --}}
+      </header>
 
-        <nav>
+    </div class="">
+          <nav class="text-center text-2xl">
           {{#if logged_in}}
           <a href="/profile">profile</a> |
-          <a href=""></a>
+          <a href="">log out</a>
           <button class="no-button" id="logout">logout</button>
           {{else}}
-          {{!-- <a href="/login">login</a> --}}
+          <a class="log-in-btn bg-red-400 border-indigo-400" href="/login">login</a>
           {{/if}}
         </nav>
+    <div>
 
-      </header>
+      {{!-- <div class="grid grid-rows-4 grid-flow-col gap-4">
+  <div>01</div>
+  <!-- ... -->
+  <div>09</div> --}}
+</div>
+
     </div>
 
     <main>
@@ -48,5 +55,6 @@
     <script src="/js/logout.js"></script>
     {{/if}}
 
+    <script src="./js/home.js"></script>
   </body>
 </html>
