@@ -1,18 +1,20 @@
-body {
+/* body {
     background-color: rgb(255, 255, 196);
-}
+} */
 
-nav {
+/* nav {
     background-color: rgb(37, 106, 255);
     padding: 10px 0px 10px 0px;
     /* display: flex;
     flex-direction: row;
-    justify-content: space-evenly; */
-}
+    justify-content: space-evenly; 
+} */
 
 header {
     text-align: center;
     font-size: 50px;
+    border-bottom: solid 3px;
+    padding: 15px;
 }
 
 li {
@@ -30,3 +32,73 @@ li:hover {
     opacity: 0.5;
     cursor: pointer;
 }
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    align-self: center;
+    /* align-content: center; */
+}
+
+.boxes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0px 30px 0px 30px;
+    border-radius: 10px;
+    margin-top: 150px;
+}
+
+.insert {
+    margin: 15px 0px 15px 10px;
+    padding: 0px 0px 0px 15px;
+    border-radius: 10px;
+}
+
+.lbtn {
+    border-radius: 5px;
+    background-color: rgb(201, 90, 90);
+    border: 2px solid;
+    font-size: 70%;
+    /* padding: 10px; */
+    margin: 10px;
+    width: 30%;
+    height: 4vh;
+}
+
+.lbtn {
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid;
+    font-size: 70%;
+    /* padding: 10px; */
+    margin: 10px;
+    width: 30%;
+    height: 4vh;
+}
+
+.lbtn:hover {
+    background-color: antiquewhite;
+    cursor: pointer;
+    transform: translateY(3px);
+}
+
+.log-in-btn {
+    padding: 10px;
+    border: 3px solid;
+    border-radius: 5px;
+    position: absolute;
+    top: 150px;
+    margin: 0px 0px 600px 0px;
+}
+
+.log-in-btn:hover {
+    transform: translateY(3px);
+}
+
+/* 
+.btn:active {
+    transform: translateY(2px);
+} */

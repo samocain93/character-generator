@@ -9,16 +9,46 @@ router.get('/', (req, res) => {
     res.render('homepage');
   });
 
-router.get('/', async (req, res) => {
-   // res.render();
+// Rendering homepage with session
+router.get('/login', (req, res) => {
+   if (req.session.logged_in) {
+     res.redirect('/profile');
+     return;
+   }
+ 
+   res.render('login');
+ });
+
+  // Rendering login page
+router.get('/login', async (req, res) => {
+   res.render('login');
 });
 
-router.get('/character', async (req, res) => {
-  res.render('partials/character-form');
+router.get('/create', async (req, res) => {
+   res.render('partials/character-form');
 });
 
 router.post('/', async (req, res) => {
-  res.render('partials/form', {'body': req.body});
+   res.render('partials/form', { 'body': req.body });
 });
+
+router.get('/profile', withAuth, async (req, res) => {
+
+   try {
+     const userData = await User.findByPk(req.session.user_id, {
+       attributes: { exclude: ['password'] },
+       include: [{ model: Character }],
+     });
+ 
+     const user = userData.get({ plain: true });
+ 
+     res.render('profile', {
+       ...user,
+       logged_in: true
+     });
+   } catch (err) {
+     res.status(500).json(err);
+   }
+ });
 
 module.exports = router;
