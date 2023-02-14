@@ -1,24 +1,25 @@
-const Character = require('./Character');
-const Class = require('./Class');
-const User = require('./User');
+const Character = require("./Character");
+const Class = require("./Class");
+const User = require("./User");
 
 User.hasMany(Character, {
-    foreignKey: 'user_id'
+  foreignKey: "user_id",
 });
 
 Character.belongsTo(User, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE',
-})
+  foreignKey: "user_id",
+});
 
-Character.hasOne(Class, {
-    foreignKey: 'character_id',
-    onDelete: 'CASCADE',
-})
+Class.hasMany(Character, {
+  foreignKey: {
+    name: "class_id",
+  },
+});
 
-Class.belongsTo(Character, {
-    foreignKey: 'character_id',
-    onDelete: 'CASCADE',
-})
+Character.belongsTo(Class, {
+  foreignKey: {
+    name: "class_id",
+  },
+});
 
 module.exports = { Character, Class, User };
