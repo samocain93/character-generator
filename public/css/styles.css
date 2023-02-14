@@ -57,9 +57,15 @@ li:hover {
     border-radius: 10px;
 }
 
+.insert2 {
+    margin: 5px 0px 2px 0px;
+    padding: 0px 0px 0px 15px;
+    border-radius: 6px;
+}
+
 .lbtn {
     border-radius: 5px;
-    background-color: rgb(201, 90, 90);
+    background-color: rgb(255, 255, 255);
     border: 2px solid;
     font-size: 70%;
     /* padding: 10px; */
@@ -75,8 +81,8 @@ li:hover {
     font-size: 70%;
     /* padding: 10px; */
     margin: 10px;
-    width: 30%;
-    height: 4vh;
+    width: 20%;
+    height: 3vh;
 }
 
 .lbtn:hover {
@@ -98,6 +104,10 @@ li:hover {
     transform: translateY(3px);
 }
 
+.box-padding {
+    padding: 30px 30px 10px 30px;
+    border-radius: 10px;
+}
 /* 
 .btn:active {
     transform: translateY(2px);

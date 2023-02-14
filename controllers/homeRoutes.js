@@ -1,7 +1,7 @@
 
 //
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Character } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Rendering homepage
@@ -15,14 +15,13 @@ router.get('/login', (req, res) => {
      res.redirect('/profile');
      return;
    }
- 
    res.render('login');
  });
 
   // Rendering login page
-router.get('/login', async (req, res) => {
-   res.render('login');
-});
+// router.get('/login', async (req, res) => {
+//    res.render('login');
+// });
 
 router.get('/create', async (req, res) => {
    res.render('partials/character-form');
@@ -50,5 +49,27 @@ router.get('/profile', withAuth, async (req, res) => {
      res.status(500).json(err);
    }
  });
+
+ router.get('/characters/:id', async (req, res) => {
+  try {
+    const charData = await Character.findByPk(req.params.id, {
+      include: [
+        {
+          model: Character,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    const char = charData.get({ plain: true });
+
+    res.render('character', {
+      ...project,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;

@@ -1,1 +1,71 @@
-<h1>Welcome to your profile!</h1>
+<div class="">
+  <div class="">
+    <h2 class="text-center text-4xl welcome pt-10" >Welcome, {{username}}!</h2>
+  </div>
+</div>
+
+<div>
+  {{#if characters.length}}
+  <div class="col-md-6 project-list">
+    <h3>Current Projects:</h3>
+
+    {{#each characterss as |project|}}
+    <div class="">
+      <div class="">
+        <h4><a href="/characters/{{character.id}}">{{character.name}}</a></h4>
+      </div>
+
+      <div class="">
+        <button class="btn btn-sm btn-danger" data-id="{{character.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<section class="flex">
+
+    <div class="border-4 rounded-lg border-indigo-400 bg-red-400 p-5 mt-12 text-xl">
+        <div>
+            <h2 class="text-center text-3xl pb-6">Create New Character!</h2>
+        </div>
+
+        <div>
+            <form id="character-create-form"></form>
+                <div>
+                    <label for="height">Character's Name:</label>
+                    <input type="text" class="insert2" id="char-name">
+                </div>
+
+                <div>
+                    <label>Character Age:</label>
+                    <input type="input" class="insert2" id="char-age">
+                </div>
+
+                <div>
+                    <label>Character's height in ft: </label>
+                    <input type="range" id="char-height" name="height" min="1" max="8">
+                </div>
+
+                <div>
+                    <label>Choose a class:</label>
+                    <div id="class-choice"></div>
+                </div>
+
+                <div>
+                    <label>Choose Color:</label>
+                    <input type="radio" id="char-background-color">
+                </div>
+
+                <div class="flex">
+                    <button class="lbtn bg-green-300" id="" type="submit" for="submit">Generate</button>
+                </div>
+            </form>
+        </div>
+
+ 
+
+<script src="/js/character-forms.js"></script>
+</div>
+</section>

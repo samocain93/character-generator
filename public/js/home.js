@@ -1,11 +1,11 @@
 // Test document
 
-const logInPage = (event) => {
-    event.preventDefault();
+// const logInPage = (event) => {
+//     event.preventDefault();
 
-    // const logInBtn = document.getElementById('log-in-btn');
+//     const logInBtn = document.getElementById('log-in-btn');
 
-    document.location.replace('/login');
-}
+//     document.location.replace('/login');
+// }
 
-document.querySelector('.log-in-btn').addEventListener('click', logInPage);
+// document.querySelector('.log-in-btn').addEventListener('click', logInPage);
