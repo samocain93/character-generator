@@ -8,6 +8,7 @@ const classData = [
     charisma: 40,
     intelligence: 20,
     agility: 10,
+   
   },
   {
     class_name: 'Mage',
@@ -16,6 +17,7 @@ const classData = [
     charisma: 10,
     intelligence: 90,
     agility: 30,
+    
   },
   {
     class_name: 'Assassin',
@@ -24,6 +26,7 @@ const classData = [
     charisma: 10,
     intelligence: 40,
     agility: 90,
+    
   },
   {
     class_name: 'Guardian',
@@ -32,6 +35,7 @@ const classData = [
     charisma: 60,
     intelligence: 20,
     agility: 10,
+    
   },
   {
     class_name: 'Strategist',
@@ -40,6 +44,7 @@ const classData = [
     charisma: 60,
     intelligence: 90,
     agility: 30,
+    
   }
 ]
 const seedClasses = () => Class.bulkCreate(classData);
