@@ -36,7 +36,8 @@ const characterCreateFormHandler = async (event) => {
       age: charAge,
       height: charHeight,
       class_id: charClassId,
-      background_color: bgColor
+      background_color: bgColor,
+      // user_id: userId
    }
 
    document.querySelector('form').reset;
@@ -50,7 +51,7 @@ const characterCreateFormHandler = async (event) => {
 
       if (response.ok) {
          console.log(response);
-         //  document.location.replace('/views/layouts/character-sheet.');
+         document.location.replace('/view');
       } else {
          alert('Failed to create Character');
       }

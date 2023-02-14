@@ -20,8 +20,11 @@
         </h1>
             <nav class="text-center text-base">
           {{#if logged_in}}
-          <a class="hover:text-slate-600" href="/profile">profile</a> |
-          <a class="hover:text-slate-600" id="logout" href="">log out</a>
+          <a href="/">Home</a> |
+          <a href="/create">Create</a> |
+          <a href="/view">Your Last Character</a> |
+          <a class="hover:text-slate-600" href="/profile">Profile</a> |
+          <a class="hover:text-slate-600" id="logout" href="">Log Out</a>
           {{!-- <button class="no-button" id="logout">logout</button> --}}
           {{else}}
           <a class="log-in-btn bg-red-400 border-indigo-400" href="/login">login</a>
