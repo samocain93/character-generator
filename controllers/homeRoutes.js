@@ -40,22 +40,21 @@ router.get("/create", withAuth, async (req, res) => {
 router.post("/", async (req, res) => {
   res.render("partials/form", { body: req.body });
 });
+
 // renders most recent character sheet view in body
-router.get('/view', async (req, res) => {
-   const newCharData = await Character.findOne({
-      where: { 'user_id': req.session.user_id },
-      order: [ [ 'id', 'DESC' ]]
-   })
-   const newChar = newCharData.get({ plain: true });
+router.get('/characters/:id', async (req, res) => {
+   const charData = await Character.findByPk(req.params.id);
+   const char = charData.get({ plain: true });
 
-   const charClassData = await Class.findByPk(newChar.class_id);
+   const charClassData = await Class.findByPk(char.class_id);
    const charClass = charClassData.get({ plain: true });
-   const className = charClass.class_name;
 
-   const userData = await User.findByPk(newChar.user_id);
-   const user = userData.get({ plain: true });
-   const username = user.username;
-   res.render("partials/character-sheet", {...newChar, className: className, username: username});
+   const renderOptions = {
+      ...char,
+      ...charClass,
+      logged_in: req.session.logged_in
+   };
+   res.render("partials/character-sheet", renderOptions);
 });
 
 router.get("/profile", withAuth, async (req, res) => {
@@ -77,26 +76,26 @@ router.get("/profile", withAuth, async (req, res) => {
   }
 });
 
- router.get('/characters/:id', async (req, res) => {
-  try {
-    const charData = await Character.findByPk(req.params.id, {
-      include: [
-        {
-          model: Character,
-          attributes: ['name'],
-        },
-      ],
-    });
+//  router.get('/characters/:id', async (req, res) => {
+//   try {
+//     const charData = await Character.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: Character,
+//           attributes: ['name'],
+//         },
+//       ],
+//     });
 
-    const char = charData.get({ plain: true });
+//     const char = charData.get({ plain: true });
 
-    res.render('character', {
-      ...char,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     res.render('character', {
+//       ...char,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 module.exports = router;

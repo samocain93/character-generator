@@ -9,3 +9,10 @@
 // }
 
 // document.querySelector('.log-in-btn').addEventListener('click', logInPage);
+
+// import { characterCreateFormHandler } from "../js/character-forms";
+// const characterStats = characterCreateFormHandler 
+
+
+
+// characterStats 
