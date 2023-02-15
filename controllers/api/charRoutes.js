@@ -15,7 +15,7 @@ const withAuth = require('../../utils/auth');
 //    res.send(newChar);
 // });
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
    try {
       const newChar = await Character.create({
          ...req.body,

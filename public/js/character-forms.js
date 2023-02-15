@@ -43,7 +43,7 @@ const characterCreateFormHandler = async (event) => {
       let response = await fetch('/api/characters', {
          method: 'POST',
          // body: JSON.stringify(characterStats),
-         body: JSON.stringify({ charName, charAge, charHeight, charClassId, bgColor }),
+         body: JSON.stringify({ charName, charAge, charHeight, charClassId, }),
          headers: { 'Content-Type': 'application/json' },
       });
 
