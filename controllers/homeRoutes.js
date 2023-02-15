@@ -19,12 +19,22 @@ router.get('/login', (req, res) => {
 
 
   // Rendering login page
-router.get('/login', async (req, res) => {
-   res.render('login');
+// router.get('/login', async (req, res) => {
+//    res.render('login');
+// });
+
+router.get('/login', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('login');
 });
 
-router.get("/create", async (req, res) => {
-  res.render("partials/character-form");
+router.get("/create", withAuth, async (req, res) => {
+
+  res.render("partials/character-form", { logged_in: req.session.logged_in});
 });
 
 router.post("/", async (req, res) => {
