@@ -29,22 +29,18 @@ const characterCreateFormHandler = async (event) => {
    const charAge = document.getElementById("char-age").value;
    const charHeight = document.getElementById("char-height").value;
    const charClassId = document.querySelector('input[name="class-choice"]:checked').value;
-   const bgColor = document.getElementById("char-background-color").value;
 
    const characterStats = {
       name: charName,
       age: charAge,
       height: charHeight,
-      class_id: charClassId,
-      background_color: bgColor,
-      // user_id: userId
+      class_id: charClassId
    }
 
    document.querySelector('form').reset;
 
-   // if (characterStats) {
-   if (charName && charAge && charHeight && charClassId && bgColor) {
-      const response = await fetch(`/api/characters/create`, {
+   if (characterStats) {
+      let response = await fetch('/api/characters', {
          method: 'POST',
          // body: JSON.stringify(characterStats),
          body: JSON.stringify({ charName, charAge, charHeight, charClassId, bgColor }),
@@ -52,8 +48,8 @@ const characterCreateFormHandler = async (event) => {
       });
 
       if (response.ok) {
-         console.log(response);
-         document.location.replace('/profile');
+         let result = await response.json();
+         document.location.replace(`/characters/${result.id}`);
       } else {
          alert('Failed to create Character');
       }

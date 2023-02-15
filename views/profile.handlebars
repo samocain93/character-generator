@@ -1,16 +1,16 @@
 <section>
 <div class="">
   <div class="">
-    <h2 class="text-center text-4xl welcome pt-10" >Welcome, {{username}}!</h2>
+    <h2 class="text-center text-4xl welcome pt-10" >Welcome, {{username}}</h2>
   </div>
 </div>
 
 <div>
   {{#if characters.length}}
   <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
+    <h3>My Characters:</h3>
 
-    {{#each characterss as |project|}}
+    {{#each characters as |character|}}
     <div class="">
       <div class="">
         <h4><a href="/characters/{{character.id}}">{{character.name}}</a></h4>
@@ -20,6 +20,7 @@
         <button class="btn btn-sm btn-danger" data-id="{{character.id}}">DELETE</button>
       </div>
     </div>
+    <br>
     {{/each}}
   </div>
   {{/if}}
