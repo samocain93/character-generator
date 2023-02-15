@@ -5,7 +5,7 @@ const withAuth = require('../../utils/auth');
 router.get('/', withAuth, async (req, res) => {
 });
 
-router.post('/create', async (req, res) => {
+router.post('/create', withAuth, async (req, res) => {
    // creates new character with the request body
    let charData = {
       ...req.body,

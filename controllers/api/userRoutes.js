@@ -9,7 +9,7 @@ router.post("/", async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.username = userData.username;
-      req.session.loggedIn = true;
+      req.session.logged_in = true;
       res.status(200).json(userData);
     });
   } catch (err) {
@@ -40,7 +40,7 @@ router.post("/login", async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       // req.session.username = userData.username;
-      req.session.loggedIn = true;
+      req.session.logged_in = true;
       res.json({ user: userData, message: "Successfully logged in!" });
     });
   } catch (err) {
@@ -52,7 +52,7 @@ router.post("/login", async (req, res) => {
 // Logout
 router.post("/logout", async (req, res) => {
   try {
-    if (req.session.loggedIn) {
+    if (req.session.logged_in) {
       const userData = await req.session.destroy(() => {
         res.status(204).end();
       });
