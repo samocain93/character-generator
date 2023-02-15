@@ -23,11 +23,20 @@ An interactive full-stack application built in collaboration using the MVC model
 
 ## Deployed Application
 
+- !!! HEROKU LINK HERE
+
 ## Installation
+
+- This project can be tested locally by cloning or forking the repo. You will want to make sure Node.js (https://nodejs.org/en/) has been installed on your device.
+- Once the repo is cloned locally, inside the `package.json` file, you will see the list of required dependencies used throughout this project.
+- To install the dependencies, enter `"npm install"`
+- Once installed, you can run `npm run start` to start the server and begin!
 
 ## Usage
 
 ## Screenshots
+
+![Application Home Page](./assets/images/home_screenshot.png)
 
 ## Credits
 
@@ -45,10 +54,8 @@ An interactive full-stack application built in collaboration using the MVC model
 
 ## License
 
-- [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Contributions
 
--
-
-## Socials
+- This project is not currently accepting contributions, however it can be cloned and tested locally by forking the repository.
