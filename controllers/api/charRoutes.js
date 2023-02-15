@@ -37,7 +37,7 @@ router.delete('/:id', withAuth, async (req, res) => {
        },
      });
  
-     if (!pcharData) {
+     if (!charData) {
        res.status(404).json({ message: 'No character found with this id!' });
        return;
      }
