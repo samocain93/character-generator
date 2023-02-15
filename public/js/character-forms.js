@@ -42,21 +42,23 @@ const characterCreateFormHandler = async (event) => {
 
    document.querySelector('form').reset;
 
-   if (characterStats) {
-      const response = await fetch('/api/characters/create', {
+   // if (characterStats) {
+   if (charName && charAge && charHeight && charClassId && bgColor) {
+      const response = await fetch(`/api/characters/create`, {
          method: 'POST',
-         body: JSON.stringify(characterStats),
+         // body: JSON.stringify(characterStats),
+         body: JSON.stringify({ charName, charAge, charHeight, charClassId, bgColor }),
          headers: { 'Content-Type': 'application/json' },
       });
 
       if (response.ok) {
          console.log(response);
-         document.location.replace('/view');
+         document.location.replace('/profile');
       } else {
          alert('Failed to create Character');
       }
    }
-
+   console.log('yay stats');
 };
 
 document

@@ -5,7 +5,9 @@ const withAuth = require("../utils/auth");
 
 // Rendering homepage
 router.get("/", (req, res) => {
-  res.render("homepage");
+  res.render("homepage", {  
+    logged_in: req.session.logged_in 
+  });
 });
 
 // Rendering homepage with session
@@ -34,7 +36,9 @@ router.get('/login', (req, res) => {
 
 router.get("/create", withAuth, async (req, res) => {
 
-  res.render("partials/character-form", { logged_in: req.session.logged_in});
+  res.render("partials/character-form", { 
+    logged_in: req.session.logged_in
+  });
 });
 
 router.post("/", async (req, res) => {

@@ -2,20 +2,21 @@ const router = require('express').Router();
 const { Character } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
-});
+// router.get('/', withAuth, async (req, res) => {
+// });
+
+// router.post('/create', withAuth, async (req, res) => {
+//    // creates new character with the request body
+   
+//    let charData = {
+//       ...req.body,
+//       user_id: req.session.user_id
+//    };
+//    const newChar = Character.create(charData);
+//    res.send(newChar);
+// });
 
 router.post('/create', withAuth, async (req, res) => {
-   // creates new character with the request body
-   let charData = {
-      ...req.body,
-      'user_id': req.session.user_id
-   };
-   const newChar = Character.create(charData);
-   res.send(newChar);
-});
-
-router.post('/', async (req, res) => {
    try{
       const newChar = await Character.create({
          ...req.body,
