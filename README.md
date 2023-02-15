@@ -4,7 +4,7 @@ An interactive full-stack application built in collaboration using the MVC model
 
 ## Description
 
--
+- Fantasy and roleplaying games are beloved by millions all over the world. Whether as a tabletop game, on a computer, or playing on a console online with friends, these types of games embody a huge community of devoted followers. Our goal was to help create an application that allowed users to create, store and view characters that they can use within their roleplaying game. With our site, users will have the opportunity to create a login, create new characters, assign them to a class, and be able to view them within their profile for use at any time.
 
 ## Table of Contents
 
@@ -49,6 +49,6 @@ An interactive full-stack application built in collaboration using the MVC model
 
 ## Contributions
 
-- 
+-
 
 ## Socials
