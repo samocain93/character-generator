@@ -25,10 +25,6 @@ Character.init(
       type: DataTypes.DECIMAL,
       allowNull: false,
     },
-    background_color: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
 
     user_id: {
       type: DataTypes.INTEGER,
