@@ -16,6 +16,9 @@ router.get("/", async (req, res) => {
         {
           model: User,
         },
+        {
+          model: Class
+        }
       ],
     });
 
@@ -23,7 +26,7 @@ router.get("/", async (req, res) => {
     const characters = characterData.map((character) =>
       character.get({ plain: true })
     );
-
+     console.log(characters)
     // Pass serialized data and session flag into template
     res.render("homepage", {
       characters,
