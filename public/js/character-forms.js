@@ -44,6 +44,7 @@ const characterCreateFormHandler = async (event) => {
          method: 'POST',
          // body: JSON.stringify(characterStats),
          body: JSON.stringify({ charName, charAge, charHeight, charClassId, }),
+         // body: JSON.stringify({ name, age, height, class_id, }),
          headers: { 'Content-Type': 'application/json' },
       });
 
