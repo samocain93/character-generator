@@ -44,8 +44,8 @@ const characterCreateFormHandler = async (event) => {
    if (characterStats) {
       let response = await fetch('/api/characters', {
          method: 'POST',
-         // body: JSON.stringify(characterStats),
-         body: JSON.stringify({ charName, charAge, charHeight, charClassId, }),
+         body: JSON.stringify(characterStats), //fixed comment issue here causing db block
+         // body: JSON.stringify({ charName, charAge, charHeight, charClassId, }),
          // body: JSON.stringify({ name, age, height, class_id, }),
          headers: { 'Content-Type': 'application/json' },
       });
