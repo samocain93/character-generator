@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
   });
 // router.get("/", (req, res) => {
 //   res.render("homepage");
-// });
+});
 
 router.get("/", async (req, res) => {
   try {
