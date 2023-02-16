@@ -73,6 +73,22 @@ router.post("/", async (req, res) => {
 });
 
 // renders most recent character sheet view in body
+// router.get("/characters/:id", async (req, res) => {
+//   const charData = await Character.findByPk(req.params.id);
+//   const char = charData.get({ plain: true });
+
+//   const charClassData = await Class.findByPk(char.class_id);
+//   const charClass = charClassData.get({ plain: true });
+
+//   const renderOptions = {
+//     ...char,
+//     ...charClass,
+//     logged_in: req.session.logged_in,
+//   };
+//   res.render("partials/character-sheet", renderOptions);
+// });
+
+// Rendering character sheet not in a partial
 router.get("/characters/:id", async (req, res) => {
   const charData = await Character.findByPk(req.params.id);
   const char = charData.get({ plain: true });
@@ -85,7 +101,7 @@ router.get("/characters/:id", async (req, res) => {
     ...charClass,
     logged_in: req.session.logged_in,
   };
-  res.render("partials/character-sheet", renderOptions);
+  res.render("character-display", renderOptions);
 });
 
 router.get("/profile", withAuth, async (req, res) => {
@@ -107,26 +123,26 @@ router.get("/profile", withAuth, async (req, res) => {
   }
 });
 
-//  router.get('/characters/:id', async (req, res) => {
-//   try {
-//     const charData = await Character.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: Character,
-//           attributes: ['name'],
-//         },
-//       ],
-//     });
+ router.get('/characters/:id', async (req, res) => {
+  try {
+    const charData = await Character.findByPk(req.params.id, {
+      // include: [
+      //   {
+      //     model: User,
+      //     attributes: ['name'],
+      //   },
+      // ],
+    });
 
-//     const char = charData.get({ plain: true });
+    const char = charData.get({ plain: true });
 
-//     res.render('character', {
-//       ...char,
-//       logged_in: req.session.logged_in
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+    res.render('character-sheet', {
+      ...char,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
