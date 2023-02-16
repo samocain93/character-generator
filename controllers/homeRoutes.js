@@ -8,40 +8,9 @@ router.get("/", (req, res) => {
   res.render("homepage", {  
     logged_in: req.session.logged_in 
   });
-// router.get("/", (req, res) => {
-//   res.render("homepage");
 });
 
-router.get("/", async (req, res) => {
-  try {
-    // Get all projects and JOIN with user data
-    const characterData = await Character.findAll({
-      include: [
-        {
-          model: User,
-        },
-        {
-          model: Class
-        }
-      ],
-    });
-
-    // Serialize data so the template can read it
-    const characters = characterData.map((character) =>
-      character.get({ plain: true })
-    );
-     console.log(characters)
-    // Pass serialized data and session flag into template
-    res.render("homepage", {
-      characters,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-// Rendering homepage with session
+// Rendering login page
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
     res.redirect("/profile");
@@ -50,60 +19,12 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-// Rendering login page
-// router.get('/login', async (req, res) => {
-//    res.render('login');
-// });
-
-router.get("/login", (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect("/");
-    return;
-  }
-
-  res.render("login");
-});
-
+// rendering create character page
 router.get("/create", withAuth, async (req, res) => {
   res.render("partials/character-form", { logged_in: req.session.logged_in });
 });
 
-router.post("/", async (req, res) => {
-  res.render("partials/form", { body: req.body });
-});
-
-// renders most recent character sheet view in body
-// router.get("/characters/:id", async (req, res) => {
-//   const charData = await Character.findByPk(req.params.id);
-//   const char = charData.get({ plain: true });
-
-//   const charClassData = await Class.findByPk(char.class_id);
-//   const charClass = charClassData.get({ plain: true });
-
-//   const renderOptions = {
-//     ...char,
-//     ...charClass,
-//     logged_in: req.session.logged_in,
-//   };
-//   res.render("partials/character-sheet", renderOptions);
-// });
-
-// Rendering character sheet not in a partial
-router.get("/characters/:id", async (req, res) => {
-  const charData = await Character.findByPk(req.params.id);
-  const char = charData.get({ plain: true });
-
-  const charClassData = await Class.findByPk(char.class_id);
-  const charClass = charClassData.get({ plain: true });
-
-  const renderOptions = {
-    ...char,
-    ...charClass,
-    logged_in: req.session.logged_in,
-  };
-  res.render("character-display", renderOptions);
-});
-
+// rendering profile page
 router.get("/profile", withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
@@ -123,26 +44,110 @@ router.get("/profile", withAuth, async (req, res) => {
   }
 });
 
- router.get('/characters/:id', async (req, res) => {
-  try {
-    const charData = await Character.findByPk(req.params.id, {
-      // include: [
-      //   {
-      //     model: User,
-      //     attributes: ['name'],
-      //   },
-      // ],
-    });
+// Rendering character sheet not in a partial
+router.get("/characters/:id", async (req, res) => {
+  const charData = await Character.findByPk(req.params.id);
+  const char = charData.get({ plain: true });
 
-    const char = charData.get({ plain: true });
+  const charClassData = await Class.findByPk(char.class_id);
+  const charClass = charClassData.get({ plain: true });
 
-    res.render('character-sheet', {
-      ...char,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
+  const renderOptions = {
+    ...char,
+    ...charClass,
+    logged_in: req.session.logged_in,
+  };
+  res.render("character-display", renderOptions);
 });
+
+// other login route
+// router.get("/login", (req, res) => {
+//   if (req.session.logged_in) {
+//     res.redirect("/");
+//     return;
+//   }
+//   res.render("login");
+// });
+
+// router.get("/", async (req, res) => {
+//   try {
+//     const characterData = await Character.findAll({
+//       include: [
+//         {
+//           model: User,
+//         },
+//         {
+//           model: Class
+//         }
+//       ],
+//     });
+
+//     const characters = characterData.map((character) =>
+//       character.get({ plain: true })
+//     );
+//      console.log(characters)
+//     res.render("homepage", {
+//       characters,
+//       logged_in: req.session.logged_in,
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
+
+
+// Rendering login page
+// router.get('/login', async (req, res) => {
+//    res.render('login');
+// });
+
+
+
+// router.post("/", async (req, res) => {
+//   res.render("partials/form", { body: req.body });
+// });
+
+// renders most recent character sheet view in body
+// router.get("/characters/:id", async (req, res) => {
+//   const charData = await Character.findByPk(req.params.id);
+//   const char = charData.get({ plain: true });
+
+//   const charClassData = await Class.findByPk(char.class_id);
+//   const charClass = charClassData.get({ plain: true });
+
+//   const renderOptions = {
+//     ...char,
+//     ...charClass,
+//     logged_in: req.session.logged_in,
+//   };
+//   res.render("partials/character-sheet", renderOptions);
+// });
+
+
+
+
+
+//  router.get('/characters/:id', async (req, res) => {
+//   try {
+//     const charData = await Character.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['name'],
+//         },
+//       ],
+//     });
+
+//     const char = charData.get({ plain: true });
+
+//     res.render('character-display', {
+//       ...char,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 module.exports = router;
