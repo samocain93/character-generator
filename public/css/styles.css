@@ -51,6 +51,14 @@ li:hover {
     margin-top: 150px;
 }
 
+.boxes2 {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+
+    margin-left: 50px;
+}
+
 .insert {
     margin: 15px 0px 15px 10px;
     padding: 0px 0px 0px 15px;

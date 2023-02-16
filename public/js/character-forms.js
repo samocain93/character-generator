@@ -29,7 +29,9 @@ const characterCreateFormHandler = async (event) => {
    const charAge = document.getElementById("char-age").value;
    const charHeight = document.getElementById("char-height").value;
    const charClassId = document.querySelector('input[name="class-choice"]:checked').value;
-   alert(charName)
+
+   // alert(charName)
+
    const characterStats = {
       name: charName,
       age: charAge,
@@ -44,9 +46,7 @@ const characterCreateFormHandler = async (event) => {
    if (characterStats) {
       let response = await fetch('/api/characters', {
          method: 'POST',
-         // body: JSON.stringify(characterStats),
-         body: JSON.stringify({ charName, charAge, charHeight, charClassId, }),
-         // body: JSON.stringify({ name, age, height, class_id, }),
+         body: JSON.stringify(characterStats),
          headers: { 'Content-Type': 'application/json' },
       });
 
@@ -59,6 +59,8 @@ const characterCreateFormHandler = async (event) => {
    }
    console.log('yay stats');
 };
+
+
 
 document
    .querySelector('#character-create-form')
