@@ -15,8 +15,9 @@
     <div class="bg-green-600" id="">
       <header class="" id="">
         <h1>
+          <a class="text-6xl hover:text-slate-600 text-decoration:underline" href="/">
           <span role="img" aria-label="alien-gamer">👾</span> 
-          <a class="text-6xl hover:text-slate-600 text-decoration:underline" href="/">Character Generator</a>
+          Character Generator</a>
         </h1>
           <nav class="text-center text-base">
           {{#if logged_in}}
@@ -26,7 +27,7 @@
           <a class="hover:text-slate-600" id="logout" href="">Log Out</a>
           {{!-- <button class="no-button" id="logout">logout</button> --}}
           {{else}}
-          <a class="log-in-btn bg-red-400 border-indigo-400" href="/login">login</a>
+          <a class="log-in-btn bg-red-400 border-indigo-400 mt-6" href="/login">login</a>
           {{/if}}
         </nav>
       </header>

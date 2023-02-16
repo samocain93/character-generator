@@ -15,6 +15,19 @@ const withAuth = require("../../utils/auth");
 //    res.send(newChar);
 // });
 
+// router.post('/', withAuth, async (req, res) => {
+//    try {
+//       const newChar = await Character.create({
+//          ...req.body,
+//          user_id: req.session.user_id,
+//       });
+//       res.status(200).json(newChar);
+//    } catch (err) {
+//       res.status(400).json(err);
+//    }
+//    // console.log(req.body);
+//   });
+
 router.post("/", async (req, res) => {
   console.log(req.body);
   // try {

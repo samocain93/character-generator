@@ -4,9 +4,13 @@ const { User, Character, Class } = require("../models");
 const withAuth = require("../utils/auth");
 
 // Rendering homepage
+router.get("/", (req, res) => {
+  res.render("homepage", {  
+    logged_in: req.session.logged_in 
+  });
 // router.get("/", (req, res) => {
 //   res.render("homepage");
-// });
+});
 
 router.get("/", async (req, res) => {
   try {

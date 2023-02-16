@@ -44,7 +44,9 @@ const characterCreateFormHandler = async (event) => {
    if (characterStats) {
       let response = await fetch('/api/characters', {
          method: 'POST',
-         body: JSON.stringify(characterStats),
+         // body: JSON.stringify(characterStats),
+         body: JSON.stringify({ charName, charAge, charHeight, charClassId, }),
+         // body: JSON.stringify({ name, age, height, class_id, }),
          headers: { 'Content-Type': 'application/json' },
       });
 
@@ -55,7 +57,7 @@ const characterCreateFormHandler = async (event) => {
          alert('Failed to create Character');
       }
    }
-
+   console.log('yay stats');
 };
 
 document

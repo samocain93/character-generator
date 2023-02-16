@@ -108,7 +108,7 @@ li:hover {
     padding: 30px 30px 10px 30px;
     border-radius: 10px;
 }
-/* 
-.btn:active {
-    transform: translateY(2px);
-} */
+
+.transform:hover {
+    transform: translateY(3px);
+}
