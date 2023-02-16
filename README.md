@@ -44,11 +44,17 @@ An interactive full-stack application built in collaboration using the MVC model
 
 ## Screenshots
 
-1. Home Screen
-   ![Application Home Page](./assets/images/home_screenshot.png)
+1. Home Screen & Login
+   ![Application Home Page](./assets/images/login-new.png)
 
 2. Character Creation Form
-   ![Character Creation Form](./assets/images/character-form.png)
+   ![Character Creation Form](./assets/images/char-generator-new.png)
+
+3. Character Details Page
+   ![Single Character View](./assets/images/character-screenshot.png)
+
+4. Profile View / List of Characters
+   ![User Profile View](./assets/images/profile-list.png)
 
 ## Credits
 
@@ -62,7 +68,7 @@ An interactive full-stack application built in collaboration using the MVC model
   - https://github.com/marchetype
 - Sam O'Cain
   - https://github.com/samocain93
-- With assistance led by Jason Vissage (TA) and Torre Taylor (Instructor)
+- Additional assistance led by Jason Vissage (TA) and Torre Taylor (Instructor)
 
 ## License
 
