@@ -29,13 +29,15 @@ const characterCreateFormHandler = async (event) => {
    const charAge = document.getElementById("char-age").value;
    const charHeight = document.getElementById("char-height").value;
    const charClassId = document.querySelector('input[name="class-choice"]:checked').value;
-
+   alert(charName)
    const characterStats = {
       name: charName,
       age: charAge,
       height: charHeight,
       class_id: charClassId
    }
+
+   console.log(characterStats)
 
    document.querySelector('form').reset;
 
