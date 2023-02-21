@@ -1,0 +1,26 @@
+ {{#if characters.length}}
+  <div class="col-md-6 project-list">
+    <h3>All Characters:</h3>
+
+    {{#each characters as |character|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/character/{{character.id}}">{{character.name}}</a></h4>
+         <h2 class="text-2xl">Name: {{character.name}}</h2>
+      <h2 class="text-2xl">Age: {{character.age}}</h2>
+    <h2 class="text-2xl">Height in ft: {{character.height}}</h2>
+    <h2 class="text-2xl">Class: {{character.class.class_name}}</h2>
+    <h2 class="text-2xl">Strength: {{character.class.strength}}</h2>
+    <h2 class="text-2xl">Endurance: {{character.class.endurance}}</h2>
+    <h2 class="text-2xl">Charisma: {{character.class.charisma}}</h2>
+    <h2 class="text-2xl">Intelligence: {{character.class.intelligence}}</h2>
+    <h2 class="text-2xl">Agility: {{character.class.agility}}</h2>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>

@@ -1,0 +1,37 @@
+
+<section>
+
+  <div class="">
+    <div class="">
+      <h2 class="text-center text-4xl welcome pt-10" >Welcome, {{username}}</h2>
+    </div>
+  </div>
+
+  {{#if characters.length}}
+  <div class="bg-red-400 border-4 border-indigo-400 rounded-md mt-14 ml-14 boxes2 char-list" id="char-list">
+
+    <div class="border-b-4 border-indigo-400 p-4" id="char-list">
+      <h1 class="text-xl">My Characters:</h1>
+    </div>
+
+    {{#each characters as |character|}}
+    <div class="pl-4 pt-4 border-b-4 border-indigo-400">
+
+      <div class="text-xl mb-4 hover:text-slate-500 ">
+        <h4><a href="/characters/{{character.id}}">{{character.name}}</a></h4>
+      </div>
+
+      <div class=" text-xs my-4">
+        <button class="border-black border-2 rounded-md p-1 px-2 bg-green-400 hover:bg-green-300 transform hover:cursor-pointer" data-id="{{character.id}}">Delete</button>
+      </div>
+      
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+
+</section>
+
+<script src="./js/del-char.js"></script>
+</div>
+</section> 

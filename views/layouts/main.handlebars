@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />  
+    <title>Character Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="stylesheet" type="text/css" href="/css/styles.css"/>
+    <link rel="stylesheet" href="/css/output.css"/>
+  </head>
+
+  <body class="bg-blue-600">
+
+    <div class="bg-green-600" id="">
+      <header class="" id="">
+        <h1>
+          <a class="text-6xl hover:text-slate-600 text-decoration:underline" href="/">
+          <span role="img" aria-label="alien-gamer">👾</span> 
+          Character Generator</a>
+        </h1>
+          <nav class="text-center text-base">
+          {{#if logged_in}}
+          <a class="hover:text-slate-600 " class="hover:text-slate-600" href="/">Home</a> |
+          <a class="hover:text-slate-600" href="/create">Create</a> |
+          <a class="hover:text-slate-600" href="/profile">Profile</a> |
+          <a class="hover:text-slate-600" id="logout" href="">Log Out</a>
+          {{!-- <button class="no-button" id="logout">logout</button> --}}
+          {{else}}
+          <a class="log-in-btn bg-red-400 border-indigo-400 mt-6" href="/login">login</a>
+          {{/if}}
+        </nav>
+      </header>
+      
+
+    </div class="">
+   
+    <div>
+
+      {{!-- <div class="grid grid-rows-4 grid-flow-col gap-4">
+  <div>01</div>
+  <!-- ... -->
+  <div>09</div> --}}
+</div>
+
+    </div>
+
+    <main>
+          {{{ body }}}
+    </main>
+
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+
+    {{!-- <script src="./js/home.js"></script> --}}
+  </body>
+</html>
